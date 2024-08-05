@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Web</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/222117f63c.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      .container {
+        padding-top: 75px;
+        display: grid;
+        grid-template-columns: 250px auto;
+        column-gap: 20px;
+      }
+      .menu-grid {
+        width: 250px;
+        height: 100%;
+        top: 82px;
+        padding-top: 10px;
+        overflow: hidden;
+        overflow-y: scroll;
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+      }
+      ::-webkit-scrollbar {
+        width: 3px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: grey;
+      }
+      .content-grid {
+        top:0;
+        margin-left: 285px;
+        width: 1228px;
+        height: 100%;
+      }
+      .content-grid-item-1{
+        overflow-x: scroll;
+        display: flex;
+      }
+      .element{
+        margin: 7px 6px;
+        padding: 6px 12px;
+        border: 1px solid grey;
+        background-color: grey;
+        border-radius: 16px;
+        white-space: nowrap;
+        cursor: pointer;
+        color: white;
+        transition: -5s;
+      }
+      .content-grid-item-1::-webkit-scrollbar {
+        width: 5px;
+        height: 0;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: grey;
+      }
+      .content-grid-item2 {
+        grid-template-columns: 1fr 1r 1fr;
+        margin-left: 237px;
+        column-gap: 16px;
+        row-gap: 30px;
+      }
+      body {
+        background-color: white;
+        padding-left: 10px;
+        font-family: Roboto, Arial;
+      }
+      .logo-main {
+        padding-left: 13px;
+        width: 150px;
+        height: 85px;
+      }
+      .header {
+        top: 0;
+        padding: 0px;
+        display: flex;
+        width: 100%;
+        position: fixed;
+        background-color: white;
+      }
+      .search-bar {
+        border-radius: 44px;
+        margin-left: 24%;
+        height: fit-content;
+        margin-top: 26px;
+        padding: 10px;
+        width: 294px;
+        border-style: solid;
+      }
+      #menu-bar-icon {
+        padding-top: 37px;
+        padding-right: 10px;
+      }
+      #search-icon {
+        padding-top: 37px;
+        margin-left: -59px;
+      }
+      #mic-icon {
+        padding-top: 38px;
+        margin-left: 10px;
+      }
+      #cast-icon {
+        margin-left: 448px;
+        padding-top: 36px;
+      }
+      #notify-icon {
+        padding-top: 37px;
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+      #user-icon {
+        padding-right: 36px;
+        padding-top: 36px;
+      }
+      li {
+        list-style-type: none;
+      }
+      p {
+        font-family: Roboto, Arial;
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+      .thumbnail {
+        width: 388px;
+        height: 213px;
+        display: block;
+        padding-top: 10px;
+        cursor: pointer;
+        padding-right: 10px;
+        border-radius: 20px;
+      }
+      .video-title {
+        margin-top: 0;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px;
+        margin-bottom: 12px;
+        width: 315px;
+      }
+      .video-preview {
+        width: 300px;
+        display: inline-block;
+        vertical-align: top;
+        margin-right: 100px;
+      }
+      .channel-picture {
+        display: inline-block;
+        width: 50px;
+        vertical-align: top;
+      }
+      .video-info {
+        display: inline-block;
+        width: 221px;
+      }
+      .profile-picture {
+        height: 40px;
+        width: 40px;
+        border-radius: 50px;
+      }
+      .thumbnail-row {
+        margin-bottom: 12px;
+      }
+      .video-author,
+      .video-stats {
+        font-size: 12px;
+        color: rgb(96, 96, 96);
+        margin-top: -7px;
+      }
+      .video-stats {
+        margin-bottom: 16px;
+      }
+      .video-author {
+        margin-bottom: 11px;
+      }
+      #sub {
+        padding-top: 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <i class="fa fa-bars" id="menu-bar-icon"></i>
+      <img class="logo-main" src="images/you logo.jpg" alt="" />
+      <input class="search-bar" type="text" placeholder="Search" />
+      <i class="fa-solid fa-microphone" id="mic-icon"></i>
+      <i class="fa-solid fa-magnifying-glass" id="search-icon"></i>
+      <i class="fa-brands fa-chromecast" id="cast-icon"></i>
+      <i class="fa-solid fa-bell" id="notify-icon"></i>
+      <i class="fa-solid fa-user" id="user-icon"></i>
+    </div>
+    <div class="container">
+      <div class="menu-grid">
+        <div class="menu-bar">
+          <li>
+            <i
+              style="font-size: larger; padding: 10px"
+              class="fa-solid fa-house-chimney"
+            ></i
+            ><span style="padding-left: 20px; font-size: 16px">Home</span>
+          </li>
+          <li>
+            <i
+              style="font-size: larger; padding: 10px"
+              class="fa-brands fa-youtube"
+            ></i
+            ><span style="padding-left: 20px; font-size: 16px">Shorts</span>
+          </li>
+          <li>
+            <i style="font-size: larger; padding: 10px" class="material-icons"
+              >&#xe064;</i
+            ><span style="padding-left: 20px; font-size: 16px"
+              >Subscriptions</span
+            >
+          </li>
+          <hr />
+
+          <li
+            style="
+              padding-left: 10px;
+              padding-top: 10px;
+              padding-bottom: 10px;
+              font-size: large;
+            "
+          >
+            You >
+          </li>
+
+          <li>
+            <i
+              style="font-size: larger; padding: 10px"
+              class="fa-solid fa-user"
+            ></i
+            ><span style="padding-left: 20px; font-size: 16px"
+              >Your Channel</span
+            >
+          </li>
+          <li>
+            <i
+              style="font-size: larger; padding: 10px"
+              class="fa-solid fa-clock-rotate-left"
+            ></i
+            ><span style="padding-left: 20px; font-size: 16px">History</span>
+          </li>
+          <li>
+            <i
+              style="font-size: larger; padding: 10px"
+              class="fa-solid fa-sliders"
+            ></i
+            ><span style="padding-left: 20px; font-size: 16px">PlayList</span>
+          </li>
+          <li>
+            <i
+              style="font-size: larger; padding: 10px"
+              class="fa-solid fa-square-caret-right"
+            ></i
+            ><span style="padding-left: 20px; font-size: 16px"
+              >Your Videoes</span
+            >
+          </li>
+          <li>
+            <i
+              style="font-size: larger; padding: 10px"
+              class="fa-solid fa-clock"
+            ></i
+            ><span style="padding-left: 20px; font-size: 16px"
+              >Watch Later</span
+            >
+          </li>
+          <li>
+            <i
+              style="font-size: larger; padding: 10px"
+              class="fa-solid fa-thumbs-up"
+            ></i
+            ><span style="padding-left: 20px; font-size: 16px"
+              >Liked Videos</span
+            >
+          </li>
+          <hr />
+
+          <!--Explore section-->
+          <li
+            style="
+              padding-left: 10px;
+              padding-top: 10px;
+              padding-bottom: 10px;
+              font-size: large;
+            "
+          >
+            Explore
+          </li>
+          <li>
+            <i
+              style="font-size: larger; padding: 10px"
+              class="fa-brands fa-firefox-browser"
+            ></i
+            ><span style="padding-left: 20px; font-size: 16px">Trending</span>
+          </li>
+          <li>
+            <i
+              style="font-size: larger; padding: 10px"
+              class="fa-solid fa-bag-shopping"
+            ></i
+            ><span style="padding-left: 20px; font-size: 16px">Shopping</span>
+          </li>
+          <li>
+            <i
+              style="font-size: larger; padding: 10px"
+              class="fa-solid fa-music"
+            ></i
+            ><span style="padding-left: 20px; font-size: 16px">Music</span>
+          </li>
+          <li>
+            <i
+              style="font-size: larger; padding: 10px"
+              class="fa-solid fa-clapperboard"
+            ></i
+            ><span style="padding-left: 20px; font-size: 16px">Films</span>
+          </li>
+          <li>
+            <i
+              style="font-size: larger; padding: 10px"
+              class="fa-solid fa-tower-broadcast"
+            ></i
+            ><span style="padding-left: 20px; font-size: 16px">Live</span>
+          </li>
+          <li>
+            <i
+              style="font-size: larger; padding: 10px"
+              class="fa-solid fa-gamepad"
+            ></i
+            ><span style="padding-left: 20px; font-size: 16px">Gaming</span>
+          </li>
+          <li>
+            <i
+              style="font-size: larger; padding: 10px"
+              class="fa-solid fa-book-open-reader"
+            ></i
+            ><span style="padding-left: 20px; font-size: 16px">News</span>
+          </li>
+          <li>
+            <i
+              style="font-size: larger; padding: 10px"
+              class="fa-solid fa-trophy"
+            ></i
+            ><span style="padding-left: 20px; font-size: 16px">Sports</span>
+          </li>
+          <li>
+            <i
+              style="font-size: larger; padding: 10px"
+              class="fa-solid fa-lightbulb"
+            ></i
+            ><span style="padding-left: 20px; font-size: 16px">Courses</span>
+          </li>
+          <li>
+            <i
+              style="font-size: larger; padding: 10px"
+              class="fa-solid fa-vest-patches"
+            ></i
+            ><span style="padding-left: 20px; font-size: 16px"
+              >Fashion & Beauty</span
+            >
+          </li>
+          <li>
+            <i
+              style="font-size: larger; padding: 10px"
+              class="fa-solid fa-podcast"
+            ></i
+            ><span style="padding-left: 20px; font-size: 16px">Podcast</span>
+          </li>
+
+          <hr />
+
+          <!--End-->
+          <li>
+            <i
+              style="font-size: larger; padding: 10px"
+              class="fa-solid fa-gear"
+            ></i
+            ><span style="padding-left: 20px; font-size: 16px">Settings</span>
+          </li>
+          <li>
+            <i
+              style="font-size: larger; padding: 10px"
+              class="fa-solid fa-flag"
+            ></i
+            ><span style="padding-left: 20px; font-size: 16px"
+              >Report history</span
+            >
+          </li>
+          <li>
+            <i
+              style="font-size: larger; padding: 10px"
+              class="fa-solid fa-circle-question"
+            ></i
+            ><span style="padding-left: 20px; font-size: 16px">Help</span>
+          </li>
+          <li>
+            <i
+              style="font-size: larger; padding: 10px"
+              class="fa-solid fa-comment-dots"
+            ></i
+            ><span style="padding-left: 20px; font-size: 16px">Feedback</span>
+          </li>
+          <hr />
+
+          <div class="last" style="margin-bottom: 102px">
+            <p style="align-items: stretch; font-size: 12px">
+              About Press Copyright Contact us Creator Advertise Developers
+            </p>
+            <br />
+            <p style="align-items: stretch; font-size: 12px">
+              Terms Privacy Policy & Safety How YouTube works Test new features
+            </p>
+            <br />
+            <p style="align-items: stretch; font-size: 10px">
+              &copy; Vikashini Muthukumar
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-grid">
+        
+
+        <!--content-grid-item-1-->
+        <div class="content-grid-item-1">
+          <div class="element">
+            All
+          </div>
+          <div class="element">
+            Web Development
+          </div>
+          <div class="element">
+            React Routers
+          </div>
+          <div class="element">
+            Object-Oriented Programming 
+          </div>
+          <div class="element">
+            Data Structures
+          </div>
+          <div class="element">
+            Music
+          </div>
+          <div class="element">
+            Nursery Rhymes
+          </div>
+          <div class="element">
+            Tamil Songs
+          </div>
+          <div class="element">
+            Cinema
+          </div>
+          <div class="element">
+            Sports
+          </div>
+          <div class="element">
+            Beauty
+          </div>
+          <div class="element">
+            News
+          </div>
+          <div class="element">
+            Movies
+          </div>
+          <div class="element">
+            Games
+          </div>
+          <div class="element">
+            Fashion
+          </div>
+          <div class="element">
+            Furniture
+          </div>
+
+        </div>
+
+
+
+
+
+        <!--content-grid-item-2-->
+        <div class="content-grid-item-2">
+          <div class="video-preview">
+            <div class="thumbnail-row">
+               <img class="thumbnail" src="images/download (2).jpg">
+            </div>
+          <div>
+        <div class="channel-picture">
+         <img class="profile-picture" src="images/download.png">
+        </div>
+        <div class="video-info">
+         <p class="video-title">
+          3rd T20 | English | Highlights | India Tour of Sri Lanka | 30th July 2024
+         </p>
+         <p class="video-author">
+          Sony LIV
+         </p>
+         <p class="video-stats">
+          2.3M views &#183; 8 hours ago
+         </p>
+        </div>
+       </div>
+      </div>
+      <div class="video-preview">
+        <div class="thumbnail-row">
+         <img class="thumbnail" src="images/rhymes-thumbnail.jpg">
+        </div>
+        <div>
+         <div class="channel-picture">
+          <img class="profile-picture" src="images/rhymes-logo.jpg">
+         </div>
+         <div class="video-info">
+          <p class="video-title">
+            Humpty Dumpty Nursery Rhyme | Nursery Rhymes
+          </p>
+          <p class="video-author">
+           Nursery Rhymes
+          </p>
+          <p class="video-stats">
+           7.2M views &#183; 5 years ago
+          </p>
+         </div>
+        </div>
+       </div>
+       <div class="video-preview">
+        <div class="thumbnail-row">
+         <img class="thumbnail" src="images/song.png">
+        </div>
+        <div>
+         <div class="channel-picture">
+          <img class="profile-picture" src="images/sonymusic live.png">
+         </div>
+         <div class="video-info">
+          <p class="video-title">
+           3rd T20 | English | Highlights | India Tour of Sri Lanka | 30th July 2024
+          </p>
+          <p class="video-author">
+           Sony LIV
+          </p>
+          <p class="video-stats">
+           2.3M views &#183; 8 hours ago
+          </p>
+         </div>
+        </div>
+       </div>
+       <div class="video-preview">
+        <div class="thumbnail-row">
+         <img class="thumbnail" src="images/th1.png">
+        </div>
+        <div>
+         <div class="channel-picture">
+          <img class="profile-picture" src="images/download.png">
+         </div>
+         <div class="video-info">
+          <p class="video-title">
+            Best YouTube Channel for Web Development in India
+          </p>
+          <p class="video-author">
+           Sony LIV
+          </p>
+          <p class="video-stats">
+           2.3M views &#183; 8 hours ago
+          </p>
+         </div>
+        </div>
+       </div>
+       <div class="video-preview">
+        <div class="thumbnail-row">
+         <img class="thumbnail" src="images/download (2).jpg">
+        </div>
+        <div>
+         <div class="channel-picture">
+          <img class="profile-picture" src="images/download.png">
+         </div>
+         <div class="video-info">
+          <p class="video-title">
+           3rd T20 | English | Highlights | India Tour of Sri Lanka | 30th July 2024
+          </p>
+          <p class="video-author">
+           Sony LIV
+          </p>
+          <p class="video-stats">
+           2.3M views &#183; 8 hours ago
+          </p>
+         </div>
+        </div>
+       </div>
+       <div class="video-preview">
+        <div class="thumbnail-row">
+         <img class="thumbnail" src="images/download (2).jpg">
+        </div>
+        <div>
+         <div class="channel-picture">
+          <img class="profile-picture" src="images/download.png">
+         </div>
+         <div class="video-info">
+          <p class="video-title">
+           3rd T20 | English | Highlights | India Tour of Sri Lanka | 30th July 2024
+          </p>
+          <p class="video-author">
+           Sony LIV
+          </p>
+          <p class="video-stats">
+           2.3M views &#183; 8 hours ago
+          </p>
+         </div>
+        </div>
+       </div>
+       <div class="video-preview">
+        <div class="thumbnail-row">
+         <img class="thumbnail" src="images/download (2).jpg">
+        </div>
+        <div>
+         <div class="channel-picture">
+          <img class="profile-picture" src="images/download.png">
+         </div>
+         <div class="video-info">
+          <p class="video-title">
+           3rd T20 | English | Highlights | India Tour of Sri Lanka | 30th July 2024
+          </p>
+          <p class="video-author">
+           Sony LIV
+          </p>
+          <p class="video-stats">
+           2.3M views &#183; 8 hours ago
+          </p>
+         </div>
+        </div>
+       </div>
+       <div class="video-preview">
+        <div class="thumbnail-row">
+         <img class="thumbnail" src="images/download (2).jpg">
+        </div>
+        <div>
+         <div class="channel-picture">
+          <img class="profile-picture" src="images/download.png">
+         </div>
+         <div class="video-info">
+          <p class="video-title">
+           3rd T20 | English | Highlights | India Tour of Sri Lanka | 30th July 2024
+          </p>
+          <p class="video-author">
+           Sony LIV
+          </p>
+          <p class="video-stats">
+           2.3M views &#183; 8 hours ago
+          </p>
+         </div>
+        </div>
+       </div>
+       <div class="video-preview">
+        <div class="thumbnail-row">
+         <img class="thumbnail" src="images/download (2).jpg">
+        </div>
+        <div>
+         <div class="channel-picture">
+          <img class="profile-picture" src="images/download.png">
+         </div>
+         <div class="video-info">
+          <p class="video-title">
+           3rd T20 | English | Highlights | India Tour of Sri Lanka | 30th July 2024
+          </p>
+          <p class="video-author">
+           Sony LIV
+          </p>
+          <p class="video-stats">
+           2.3M views &#183; 8 hours ago
+          </p>
+         </div>
+        </div>
+       </div>
+
+
+       
+      </div>
+    </div>
+  </body>
+</html>
